@@ -6,7 +6,7 @@ mp_hands = mp.solutions.hands
 # For webcam input:
 cap = cv2.VideoCapture(0)
 with mp_hands.Hands(
-        max_num_hands=1,
+        max_num_hands=2,
         min_detection_confidence=0.5,
         min_tracking_confidence=0.5) as hands:
     while cap.isOpened():
@@ -58,7 +58,7 @@ with mp_hands.Hands(
                 fontScale = 1
                 color = (0,0,255)
                 thickness = 2
-                image = cv2.putText(image, text, coordinates, font, fontScale, color, thickness, cv2.LINE_AA)
+                # image = cv2.putText(image, text, coordinates, font, fontScale, color, thickness, cv2.LINE_AA)
 
                 print(
                     f'Index finger tip coordinate: (',
@@ -66,7 +66,7 @@ with mp_hands.Hands(
                     f'{y_coordinate})'
                 )
         
-        cv2.imshow('Hand Position Test', image)
+        cv2.imshow('Multiple Point Detection Test', image)
         if cv2.waitKey(5) & 0xFF == 27:
             break
 cap.release()

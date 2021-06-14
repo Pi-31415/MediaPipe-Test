@@ -62,8 +62,8 @@ with mp_hands.Hands(
 
                 print(
                     f'Index finger tip coordinate: (',
-                    f'{hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].x * image_width}, '
-                    f'{hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].y * image_hight})'
+                    f'{x_coordinate}, '
+                    f'{y_coordinate})'
                 )
         
         cv2.imshow('Hand Position Test', image)

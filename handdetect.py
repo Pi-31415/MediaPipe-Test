@@ -50,6 +50,16 @@ with mp_hands.Hands(
                 # Line thickness of 2 px
                 thickness = 2
                 image = cv2.circle(image, center_coordinates, radius, color, thickness)
+
+                # Display Coordinates
+                text = "("+str(x_coordinate)+" , "+str(y_coordinate)+")"
+                coordinates = (100,100)
+                font = cv2.FONT_HERSHEY_SIMPLEX
+                fontScale = 1
+                color = (0,0,255)
+                thickness = 2
+                image = cv2.putText(image, text, coordinates, font, fontScale, color, thickness, cv2.LINE_AA)
+
                 print(
                     f'Index finger tip coordinate: (',
                     f'{hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].x * image_width}, '

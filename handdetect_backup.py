@@ -1,9 +1,7 @@
 import cv2
 import mediapipe as mp
-
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
-mp_selfie_segmentation = mp.solutions.selfie_segmentation
 
 # Location of the Modules, and Jacket Outline
 modules_x = [400,500,600,700,800,350,500,600,700,850,300,500,600,700,900,250,500,600,700,950]
@@ -129,7 +127,7 @@ with mp_hands.Hands(
             image = cv2.putText(image, text, coordinates, font, fontScale, color, thickness, cv2.LINE_AA)
 
        
-        cv2.imshow('Haptic Jacket UI Overlay Test', image)
+        cv2.imshow('Multiple Point Detection Test', image)
 
         if cv2.waitKey(5) & 0xFF == 27:
             break
